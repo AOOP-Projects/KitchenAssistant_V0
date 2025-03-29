@@ -1,21 +1,23 @@
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class Planner {
+public class Planner { //LUCASQUESTIONS DO WE REALLY NEED THAT?
     
-    private Map<LocalDate, List<Recipe>> plannedMeals;
-
+    private Map<LocalDate, Recipe> plannedMeals;
+    
+    //Constructor
     public Planner() {
         
     }
-
-    public Map<LocalDate, List<Recipe>> getPlannedMeals() {
+    
+    //Getters and Setters
+    public Map<LocalDate, Recipe> getPlannedMeals() {
         return plannedMeals;
     }
-
-    public void setPlannedMeals(Map<LocalDate, List<Recipe>> plannedMeals) {
+    public void setPlannedMeals(Map<LocalDate, Recipe> plannedMeals) {
         this.plannedMeals = plannedMeals;
     }
 
@@ -23,12 +25,11 @@ public class Planner {
 
     public List<Ingredient> generateShoppingList() {
         return new ArrayList<>();
+        //LUCASQUESTION WTF??? no need
     }
 
     public void scheduleMeal(LocalDate date, Recipe recipe) {
-        plannedMeals.putIfAbsent(date, new ArrayList<>());
-        plannedMeals.get(date).add(recipe);
-        System.out.println("Scheduled " + recipe.getName() + " on " + date);
+        plannedMeals.putIfAbsent(date, recipe);
     }
    
 }
