@@ -1,16 +1,17 @@
 
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.LocalDate;
 
 public class Ingredient {
 
     private String name;
-    private LocalDateTime  expirationDate;
+    private LocalDate  expirationDate;
     private double quantity;
     
     
     //Constructor
-    public Ingredient(String name, double quantity, LocalDateTime expirationDate) {
+    public Ingredient(String name, double quantity, LocalDate expirationDate) {
         this.name = name;
         this.quantity = quantity;
         this.expirationDate = expirationDate;
@@ -26,10 +27,10 @@ public class Ingredient {
         this.name = name;
     }
 
-    public LocalDateTime getExpirationDate() {
+    public LocalDate getExpirationDate() {
         return expirationDate;
     }
-    public void setExpirationDate(LocalDateTime expirationDate) {
+    public void setExpirationDate(LocalDate expirationDate) {
         this.expirationDate = expirationDate;
     }
 
@@ -43,6 +44,6 @@ public class Ingredient {
 
     //functioanlities
     public Boolean isExpired() {
-        return expirationDate.isBefore(LocalDateTime.now()); 
+        return expirationDate.isBefore(LocalDate.now()); 
     }
 }
